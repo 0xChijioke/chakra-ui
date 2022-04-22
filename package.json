@@ -29,7 +29,7 @@
   "license": "MIT",
   "scripts": {
     "pkg": "manypkg run",
-    "dev": "yarn build:babel && preconstruct dev",
+    "dev": "node api.js && yarn build:babel && preconstruct dev",
     "prepare": "husky install",
     "fix:pkgs": "manypkg fix",
     "version:pkgs": "changeset version",
@@ -41,7 +41,7 @@
     "build:cli": "yarn pkg @chakra-ui/cli build",
     "build:prop-docs": "yarn pkg props-docs build",
     "build:tokens": "chakra-cli tokens packages/theme",
-    "build": "yarn build:babel && yarn build:cli && preconstruct build && yarn build:tokens",
+    "build": "node api.js && yarn build:babel && yarn build:cli && preconstruct build && yarn build:tokens",
     "watch": "yarn preconstruct watch",
     "test": "jest --maxWorkers=50%",
     "test:watch": "jest --maxWorkers=25% --watch --onlyChanged",
